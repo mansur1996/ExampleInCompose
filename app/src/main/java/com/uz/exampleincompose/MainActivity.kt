@@ -40,6 +40,7 @@ class MainActivity : ComponentActivity() {
 
 //                    task2
 //                    TaskManager(
+
 //                        str1 = stringResource(R.string.all_task_completed),
 //                        str2 = stringResource(R.string.nice_work),
 //                    )
@@ -111,34 +112,50 @@ fun ComposeQuadrant(
     title4: String,
     desc4: String
 ) {
-    Box(modifier = Modifier.fillMaxSize()) {
-        Row(modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(0.5f)) {
-//            TextCompose(title1, desc1)
-//            TextCompose(title2, desc2)
-            Text(text = title1, fontSize = 24.sp, modifier = Modifier.padding(16.dp))
+    Column(modifier = Modifier.fillMaxSize()) {
+        Row(modifier = Modifier.fillMaxHeight(0.5f)) {
+            Column(
+                modifier = Modifier
+                    .background(color = Color.Green)
+                    .fillMaxHeight()
+                    .fillMaxWidth(0.5f),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(text = title1, fontSize = 16.sp, modifier = Modifier.padding(16.dp))
+                Text(text = desc1, fontSize = 16.sp, modifier = Modifier.padding(16.dp))
+            }
+            Column(
+                modifier = Modifier
+                    .background(color = Color.Yellow)
+                    .fillMaxHeight()
+                    .fillMaxWidth(),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(text = title2, fontSize = 16.sp, modifier = Modifier.padding(16.dp))
+                Text(text = desc2, fontSize = 16.sp, modifier = Modifier.padding(16.dp))
+            }
         }
-        Row(modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(0.5f)
-            .background(color = Color.Red)) {
-//            TextCompose(title3, desc3)
-//            TextCompose(title4, desc4)
-            Text(text = title2, fontSize = 24.sp, modifier = Modifier.padding(16.dp))
-        }
-    }
-}
-
-@Composable
-fun TextCompose(title: String, desc: String) {
-    Box(Modifier.background(color = Color.Cyan)) {
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(text = title, fontSize = 24.sp, modifier = Modifier.padding(16.dp))
-            Text(text = desc, fontSize = 24.sp, modifier = Modifier.padding(16.dp))
+        Row(modifier = Modifier.fillMaxHeight()) {
+            Column(
+                modifier = Modifier
+                    .background(color = Color.Cyan)
+                    .fillMaxHeight()
+                    .fillMaxWidth(0.5f),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(text = title3, fontSize = 16.sp, modifier = Modifier.padding(16.dp))
+                Text(text = desc3, fontSize = 16.sp, modifier = Modifier.padding(16.dp))
+            }
+            Column(
+                modifier = Modifier
+                    .background(color = Color.LightGray)
+                    .fillMaxHeight()
+                    .fillMaxWidth(),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(text = title4, fontSize = 16.sp, modifier = Modifier.padding(16.dp))
+                Text(text = desc4, fontSize = 16.sp, modifier = Modifier.padding(16.dp))
+            }
         }
     }
 }
